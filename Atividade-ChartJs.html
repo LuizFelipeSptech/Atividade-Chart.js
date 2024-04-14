@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Atividade - Chart.js</title>
+</head>
+
+<body>
+    <div style="display: flex;justify-content: space-around;">
+        <div>
+            <canvas id="chart1" style="width: 48vw;"></canvas>
+        </div>
+        <div>
+            <canvas id="chart2" style="width: 48vw;"></canvas>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    const config1 = {
+        type: 'line',
+        data:
+        {
+            labels: ['12:00', '13:00', '14:00', '15:00', '16:00', '17:00'],
+            datasets: [
+                {
+                    backgroundColor: '#00F',
+                    borderColor: '#00F',
+                    label: 'Umidade',
+                    data: [80, 82, 80, 85, 80, 83]
+                },
+                {
+                    backgroundColor: '#F00',
+                    borderColor: '#F00',
+                    label: 'Temperatura',
+                    data: [30, 29, 28, 25, 22, 23]
+                }
+            ]
+        }
+    }
+
+    const config2 = {
+        type: 'bar',
+        data:
+        {
+            labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
+            datasets:
+                [
+                    {
+                        backgroundColor: '#F00',
+                        label: 'Temperatura Média',
+                        data: [22, 24, 27, 23, 20, 18]
+                    },
+                    {
+                        backgroundColor: '#00F',
+                        label: 'Umidade Média',
+                        data: [90, 89, 93, 87, 88, 82]
+                    }
+                ]
+        }
+    }
+
+    new Chart(chart1, config1)
+    new Chart(chart2, config2)
+</script>
